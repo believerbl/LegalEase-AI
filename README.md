@@ -2,8 +2,10 @@
 
 Understand your contracts in Plain English. LegalEase AI is a hackathon-winning application that translates complex legalese into simple, easy-to-understand summaries.
 
-**🚀 Live Demo:** [Insert Vercel Link Here]
-**📺 3-Minute Video:** [Insert YouTube Link Here]
+<!-- Update these links once deployed/recorded
+**🚀 Live Demo:** https://legalease-ai.vercel.app
+**📺 3-Minute Video:** https://youtube.com/watch?v=...
+-->
 
 ## ✨ Features
 - **Instant Extraction**: Upload any PDF document (NDAs, Employment Contracts, Leases).

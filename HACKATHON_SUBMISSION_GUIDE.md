@@ -10,7 +10,7 @@ Your code is ready for deployment.
 ## 2. 🐙 Public GitHub Repository
 - Ensure your repository is set to **Public**.
 - Ensure the `README.md` and `CODEX_USAGE.md` files are present at the root of the repository. (I have already generated these for you).
-- Remember to update the `[Insert Vercel Link Here]` and `[Insert YouTube Link Here]` placeholders in the `README.md`.
+- **Important**: In the `README.md`, the Live Demo and Video links are currently hidden as HTML comments (`<!-- -->`). Remember to uncomment them and add your actual links once your deployment and video are ready!
 
 ## 3. 📄 Google Doc Template
 Copy and paste this template into your final Google Doc submission:
