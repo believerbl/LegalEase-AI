@@ -51,6 +51,9 @@ class AIAgent:
 
     def extract_clauses(self, text: str, doc_type: str) -> list:
         print("[Agent Step 2] Extracting key clauses...")
+        # TODO(Architecture): For large documents (>15k tokens), implement a map-reduce chunking strategy here.
+        # Split text into 10k token chunks, extract clauses concurrently, then merge and deduplicate results.
+        # Currently using simple truncation for the hackathon MVP.
         prompt = f"""
         You are analyzing a {doc_type}. Extract the 3 to 5 most critical clauses from this document.
         Respond ONLY with a valid JSON object matching this schema: 

@@ -28,6 +28,11 @@ graph TD
     C -->|Store Results| E[(Supabase PostgreSQL)]
 ```
 
+## 🚀 Future Enhancements (Post-Hackathon)
+- **Large Document Processing (Map-Reduce)**: For contracts exceeding LLM context windows, implement a chunking algorithm to split the text, process chunks in parallel, and combine the extracted clauses dynamically.
+- **Multilingual Support**: Support for regional Indian languages (Hindi, Tamil, etc.) using translation APIs.
+- **OCR for Scanned PDFs**: Integrate Tesseract or AWS Textract to support non-searchable image-based PDFs.
+
 ## 🛠️ Tech Stack
 - **Frontend**: Next.js 14, Tailwind CSS, Framer Motion, Lucide React
 - **Backend**: FastAPI (Python), PyMuPDF (PDF Extraction)
