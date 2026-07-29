@@ -16,14 +16,24 @@ class AIAgent:
         else:
             self.client = OpenAI(api_key=OPENAI_API_KEY)
 
-    def _call_llm(self, prompt: str) -> dict:
-        response = self.client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[{"role": "user", "content": prompt}],
-            response_format={ "type": "json_object" },
-            temperature=0.2
-        )
-        return json.loads(response.choices[0].message.content)
+    def _call_llm(self, prompt: str, retries: int = 1) -> dict:
+        for attempt in range(retries + 1):
+            try:
+                response = self.client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[{"role": "user", "content": prompt}],
+                    response_format={ "type": "json_object" },
+                    temperature=0.2
+                )
+                return json.loads(response.choices[0].message.content)
+            except json.JSONDecodeError as e:
+                print(f"JSON parsing failed on attempt {attempt + 1}: {e}")
+                if attempt == retries:
+                    raise Exception("Failed to parse AI response into valid JSON after retries. Please try again.")
+            except Exception as e:
+                print(f"AI API call failed on attempt {attempt + 1}: {e}")
+                if attempt == retries:
+                    raise Exception("Failed to communicate with AI provider after retries. Please check your API key and connection.")
 
     def classify_document(self, text: str) -> str:
         print("[Agent Step 1] Classifying document...")
