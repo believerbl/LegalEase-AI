@@ -1,0 +1,31 @@
+# Python / Backend
+backend/venv/
+backend/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+
+# Node.js / Frontend
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnp
+.pnp.js
+
+# Next.js
+.next/
+out/
+build/
+
+# IDE / OS
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
