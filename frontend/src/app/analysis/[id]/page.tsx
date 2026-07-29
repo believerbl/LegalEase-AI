@@ -14,7 +14,8 @@ export default function AnalysisPage({ params }: { params: Promise<{ id: string 
   useEffect(() => {
     const fetchAnalysis = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/analysis/${resolvedParams.id}`);
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+        const res = await axios.get(`${apiUrl}/analysis/${resolvedParams.id}`);
         setData(res.data);
         setLoading(false);
       } catch (err: any) {

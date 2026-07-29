@@ -44,14 +44,15 @@ export default function DashboardUpload() {
       formData.append("file", file);
       
       // Upload document
-      const uploadRes = await axios.post("http://localhost:8000/upload", formData, {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const uploadRes = await axios.post(`${apiUrl}/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" }
       });
       
       const docId = uploadRes.data.document_id;
       
       // Start analysis
-      const analyzeRes = await axios.post("http://localhost:8000/analyze", {
+      const analyzeRes = await axios.post(`${apiUrl}/analyze`, {
         document_id: docId
       });
       
