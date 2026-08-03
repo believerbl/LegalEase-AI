@@ -31,3 +31,7 @@ CREATE TABLE clauses (
 
 -- Note: Row Level Security (RLS) is disabled for this hackathon demo to allow the backend easy access.
 -- In a production app, you would enable RLS and use service role keys or user auth tokens.
+
+ALTER TABLE documents DISABLE ROW LEVEL SECURITY;
+ALTER TABLE analyses DISABLE ROW LEVEL SECURITY;
+ALTER TABLE clauses DISABLE ROW LEVEL SECURITY;
