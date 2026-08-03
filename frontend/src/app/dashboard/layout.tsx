@@ -10,8 +10,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   const navItems = [
     { name: "Upload & Analyze", href: "/dashboard", icon: UploadCloud },
-    { name: "History", href: "/dashboard/history", icon: History },
-    { name: "Settings", href: "/dashboard/settings", icon: Settings },
+    { name: "History", href: "/history", icon: History },
+    { name: "Settings", href: "/settings", icon: Settings },
   ];
 
   return (
